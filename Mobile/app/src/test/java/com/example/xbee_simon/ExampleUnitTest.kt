@@ -1,4 +1,4 @@
-package com.example.simon
+package com.example.xbee_simon
 
 import org.junit.Test
 
