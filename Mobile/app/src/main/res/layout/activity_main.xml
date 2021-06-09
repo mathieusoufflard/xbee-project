@@ -23,14 +23,14 @@
         app:layout_constraintVertical_bias="0.098" />
 
     <Button
-        android:id="@+id/whiteBtn"
+        android:id="@+id/yellowBtn"
         android:layout_width="125dp"
         android:layout_height="135dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        app:backgroundTint="#DFFFFFFF"
+        app:backgroundTint="#C6D80F"
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toTopOf="@+id/redBtn"
         app:layout_constraintEnd_toStartOf="@+id/greenBtn"
@@ -51,7 +51,7 @@
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toTopOf="@+id/redBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/whiteBtn"
+        app:layout_constraintStart_toEndOf="@+id/yellowBtn"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.933" />
 
@@ -68,7 +68,7 @@
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/greenBtn"
-        app:layout_constraintStart_toStartOf="@+id/whiteBtn" />
+        app:layout_constraintStart_toStartOf="@+id/yellowBtn" />
 
     <TextView
         android:id="@+id/sequenceSizeTxt"
@@ -89,8 +89,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/sequenceSizeTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="231dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
