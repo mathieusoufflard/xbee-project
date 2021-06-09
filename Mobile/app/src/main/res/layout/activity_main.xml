@@ -23,19 +23,35 @@
         app:layout_constraintVertical_bias="0.098" />
 
     <Button
-        android:id="@+id/yellowBtn"
+        android:id="@+id/redBtn"
         android:layout_width="125dp"
         android:layout_height="135dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        app:backgroundTint="#C6D80F"
+        app:backgroundTint="#EC1809"
         app:cornerRadius="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/redBtn"
-        app:layout_constraintEnd_toStartOf="@+id/greenBtn"
+        app:layout_constraintBottom_toTopOf="@+id/greenBtn"
+        app:layout_constraintEnd_toStartOf="@+id/blueBtn"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <Button
+        android:id="@+id/blueBtn"
+        android:layout_width="125dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:backgroundTint="#203FEA"
+        app:cornerRadius="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/greenBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/redBtn"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.933" />
 
@@ -43,32 +59,16 @@
         android:id="@+id/greenBtn"
         android:layout_width="125dp"
         android:layout_height="135dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        app:backgroundTint="#39BD14"
-        app:cornerRadius="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/redBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/yellowBtn"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.933" />
-
-    <Button
-        android:id="@+id/redBtn"
-        android:layout_width="125dp"
-        android:layout_height="135dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        app:backgroundTint="#BF1D1D"
+        app:backgroundTint="#33E420"
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/greenBtn"
-        app:layout_constraintStart_toStartOf="@+id/yellowBtn" />
+        app:layout_constraintEnd_toEndOf="@+id/blueBtn"
+        app:layout_constraintStart_toStartOf="@+id/redBtn" />
 
     <TextView
         android:id="@+id/sequenceSizeTxt"
@@ -78,7 +78,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#CBFFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/greenBtn"
+        app:layout_constraintBottom_toTopOf="@+id/blueBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"

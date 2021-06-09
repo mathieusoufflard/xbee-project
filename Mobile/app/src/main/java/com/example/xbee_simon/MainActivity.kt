@@ -23,10 +23,10 @@ class MainActivity : AppCompatActivity() {
 
             binding.sequenceSizeTxt.text = binding.sequenceSizeTxt.text.toString() + nbSequence
 
-            binding.yellowBtn.setOnClickListener {
+            binding.blueBtn.setOnClickListener {
                 if(canAddSequence) {
                     tippingSequence++
-                    addSequence("Yellow")
+                    addSequence("blue")
                 }
             }
             binding.greenBtn.setOnClickListener {
