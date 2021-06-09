@@ -11,32 +11,49 @@ private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
+    private var nbSequence = 4
+    private var tippingSequence = 0
+    private var canAddSequence = true
+    private var sequence = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Log.i("message", binding.SequenceTxt.text.toString())
-        binding.yellowBtn.setOnClickListener{
-            addSequece("Yellow")
-        }
-        binding.greenBtn.setOnClickListener{
-            addSequece("Green")
-        }
+            binding.sequenceSizeTxt.text = binding.sequenceSizeTxt.text.toString() + nbSequence
 
-        binding.redBtn.setOnClickListener{
-            addSequece("Red")
-        }
+            binding.yellowBtn.setOnClickListener {
+                if(canAddSequence) {
+                    tippingSequence++
+                    addSequence("Yellow")
+                }
+            }
+            binding.greenBtn.setOnClickListener {
+                if(canAddSequence) {
+                    tippingSequence++
+                    addSequence("Green")
+                }
+            }
+
+            binding.redBtn.setOnClickListener {
+                if(canAddSequence) {
+                    tippingSequence++
+                    addSequence("Red")
+                }
+            }
+
 
 
     }
 
-    private fun addSequece(s: String) {
+    private fun addSequence(s: String) {
 
-        Log.i("message", s)
-
-        binding.SequenceTxt.text = binding.SequenceTxt.text.toString() + s + ","
+        sequence = sequence + s + ","
+        if(tippingSequence == nbSequence) {
+            canAddSequence = false;
+            Log.i("sequence", sequence)
+        }
     }
 
 
