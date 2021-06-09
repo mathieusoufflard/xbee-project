@@ -1,6 +1,7 @@
 var SerialPort = require('serialport');
 var xbee_api = require('xbee-api');
 var C = xbee_api.constants;
+var storage = require("./storage");
 require('dotenv').config()
 
 const SERIAL_PORT = process.env.SERIAL_PORT;
@@ -61,6 +62,7 @@ let serialport = new SerialPort(SERIAL_PORT, {
     if (C.FRAME_TYPE.NODE_IDENTIFICATION === frame.type) {
       // let dataReceived = String.fromCharCode.apply(null, frame.nodeIdentifier);
       console.log("NODE_IDENTIFICATION");
+      
   
   
     } else if (C.FRAME_TYPE.ZIGBEE_IO_DATA_SAMPLE_RX === frame.type) {
