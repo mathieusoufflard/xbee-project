@@ -4,6 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.xbee_simon.databinding.ActivityMainBinding
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.IgnoreExtraProperties
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private var tippingSequence = 0
     private var canAddSequence = true
     private var sequence = ""
+    private lateinit var database: DatabaseReference
 
 
 
@@ -22,8 +29,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
             binding.sequenceSizeTxt.text = binding.sequenceSizeTxt.text.toString() + nbSequence
+            database = Firebase.database.reference
 
-            binding.blueBtn.setOnClickListener {
+
+        binding.blueBtn.setOnClickListener {
                 if(canAddSequence) {
                     tippingSequence++
                     addSequence("blue")
@@ -51,21 +60,29 @@ class MainActivity : AppCompatActivity() {
             canAddSequence = false;
             Log.i("sequence", sequence)
 
-            //writeSequence(java.util.Calendar.getInstance().time, sequence)
+            writeSequence(java.util.Calendar.getInstance().time, sequence)
         }
     }
 
-    //private fun writeSequence(date: Date, sequence: String) {
+    private fun writeSequence(date: Date, sequence: String) {
 
-      //  Log.i("firebase", "coucou")
-        //val data = DataSequence(date, sequence)
+        Log.i("datatest", sequence)
+        Log.i("datatest", "coucou")
 
-        //try {
-        //    database.child("sequence").child("1").setValue(data)
-        //    Log.i("firebase", "on est la")
-       //}
-        //catch (ex: Exception){
-          //  Log.i("error", ex.toString())
-        //}
-//    }
+        val data = DataSequence(date, sequence)
+
+        try {
+            database.child("sequence").child("1").setValue(data)
+            Log.i("trydata", "on est la")
+       }
+        catch (ex: Exception){
+            Log.i("catch", ex.toString())
+        }
+    }
+}
+
+@IgnoreExtraProperties
+data class DataSequence(val date: Date? = null, val sequence: String? = null) {
+    // Null default values create a no-argument default constructor, which is needed
+    // for deserialization from a DataSnapshot.
 }
