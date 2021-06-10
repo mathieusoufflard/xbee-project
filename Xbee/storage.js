@@ -1,4 +1,5 @@
 const admin = require('firebase-admin');
+const index = require('./index');
 const serviceAccount = require('./ServiceAccountKey.json');
 
 admin.initializeApp({
@@ -8,41 +9,43 @@ admin.initializeApp({
 const db = admin.firestore();
 
 
-module.exports.registerSensor = async function (address) {
+console.log("Conexion bdd");
 
-  const docRef = db.collection('sensors').doc(address);
+module.exports.registerScore = async function (doc, gameTime, isWinner, playerId, idSequence){
+    const docRef = db.collection('score').doc(doc);
 
-  const sensor = {
-    address: address,
-    date: Date.now(),
-  }
+    const score = {
+        gameTime: gameTime,
+        isWinner: isWinner,
+        playerId: playerId,
+        sequenceId: idSequence
+    }
 
-  await docRef.get().then((snapshotDoc)=> {
-    if (!snapshotDoc.exists)
-      docRef.set(sensor);
-    else
-      docRef.update(sensor);
-  })
+    await docRef.get().then((snapshotDoc)=> {
+        if (!snapshotDoc.exists) {
+            docRef.set(score);
+        }
+        else
+            docRef.update(score);
+    })
 }
 
-module.exports.registerSample = async function (address, sample) {
-
-  const docRef = db.collection('sensors').doc(address)
-    .collection('samples').doc(Date.now().toString());
-
-  const data = {
-    value: sample,
-    date: Date.now(),
-  }
-  await docRef.set(data);
-
-
+module.exports.sequence = function (){
+    const docRef = db.collection('sequence');
+    return docRef.get() 
 }
 
-module.exports.listSensors = function () {
 
-  const docRef = db.collection('sensors');
+    db.collection("sequence").doc("0")
+    .onSnapshot((collection) => {
+        console.log("Current data: ", collection.data());
+        index.getSequence(collection.data());
+    });
 
-  return docRef.get()
 
-}
+
+
+/* db.collection("sequence").doc("0")
+.onSnapshot((collection) => {
+    console.log("Current data: ", collection.data());
+}); */
