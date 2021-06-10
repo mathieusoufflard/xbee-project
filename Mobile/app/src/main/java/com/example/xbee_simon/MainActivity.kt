@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import com.example.xbee_simon.databinding.ActivityMainBinding
 
-private const val TAG = "MainActivity"
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     private var tippingSequence = 0
     private var canAddSequence = true
     private var sequence = ""
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +42,6 @@ class MainActivity : AppCompatActivity() {
                     addSequence("Red")
                 }
             }
-
-
-
     }
 
     private fun addSequence(s: String) {
@@ -53,8 +50,22 @@ class MainActivity : AppCompatActivity() {
         if(tippingSequence == nbSequence) {
             canAddSequence = false;
             Log.i("sequence", sequence)
+
+            //writeSequence(java.util.Calendar.getInstance().time, sequence)
         }
     }
 
+    //private fun writeSequence(date: Date, sequence: String) {
 
+      //  Log.i("firebase", "coucou")
+        //val data = DataSequence(date, sequence)
+
+        //try {
+        //    database.child("sequence").child("1").setValue(data)
+        //    Log.i("firebase", "on est la")
+       //}
+        //catch (ex: Exception){
+          //  Log.i("error", ex.toString())
+        //}
+//    }
 }
