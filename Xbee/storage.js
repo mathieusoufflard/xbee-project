@@ -11,8 +11,9 @@ const db = admin.firestore();
 
 console.log("Conexion bdd");
 
-module.exports.registerScore = async function (doc, gameTime, isWinner, playerId, idSequence){
+module.exports.registerScore = async function (doc, gameStart, gameEnd, isWinner, playerId, idSequence){
     const docRef = db.collection('score').doc(doc);
+    var gameTime = (gameEnd - gameStart) /1000;
 
     const score = {
         gameTime: gameTime,
