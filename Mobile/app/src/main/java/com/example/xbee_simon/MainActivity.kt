@@ -19,7 +19,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
-    private var nbSequence = 2
+    private var nbSequence = 4
     private var tippingSequence = 0
     private var canAddSequence = true
     private var sequence = ""
@@ -61,10 +61,11 @@ class MainActivity : AppCompatActivity() {
             if (snapshot != null && snapshot.exists()) {
                 Log.d("DB listener", "Current data: ${snapshot.data}")
                 if (!canAddSequence){
+                    nbSequence++;
                     popUpScore()
                 }
                 canAddSequence = true
-                nbSequence++;
+
                 binding.sequenceSizeTxt.text = "Taille de la séquence : " + nbSequence
                 sequence = ""
 
