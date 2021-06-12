@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0000"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simon Game !"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.098" />
+
+    <Button
+        android:id="@+id/redBtn"
+        android:layout_width="125dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:backgroundTint="#EC1809"
+        app:cornerRadius="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/greenBtn"
+        app:layout_constraintEnd_toStartOf="@+id/blueBtn"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <Button
+        android:id="@+id/blueBtn"
+        android:layout_width="125dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:backgroundTint="#203FEA"
+        app:cornerRadius="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/greenBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/redBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <Button
+        android:id="@+id/greenBtn"
+        android:layout_width="125dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:backgroundTint="#33E420"
+        app:cornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/blueBtn"
+        app:layout_constraintStart_toStartOf="@+id/redBtn" />
+
+    <TextView
+        android:id="@+id/sequenceSizeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taille de la séquence : "
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CBFFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/blueBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.654" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

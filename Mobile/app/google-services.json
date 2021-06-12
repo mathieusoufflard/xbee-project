@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "922994255084",
+    "project_id": "xbee-simon",
+    "storage_bucket": "xbee-simon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922994255084:android:e1515e865fd05488a4b1c9",
+        "android_client_info": {
+          "package_name": "com.example.xbee_simon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922994255084-osm1674ebfav36inc9khd0hnpl0kmb1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtL2HaaPrYzhLBdttOSYfL0L_cf4BZoRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922994255084-osm1674ebfav36inc9khd0hnpl0kmb1t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
