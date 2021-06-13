@@ -1,5 +1,7 @@
 # xbee-project
-Projet Simon gérer avec des puce Xbee, buzer et app mobile
+L’objectif de ce projet a été de reprendre le concept du Simon, un célèbre jeu de société électronique datant de 1978, afin de le remettre au goût du jour. 
+Nous avons donc décidé de créer le Simon Connecté, permettant plus d'interactivité ainsi qu’une dimension compétitive entre plusieurs joueurs. Le jeu est pour cela contrôlé par un maître du jeu sur une application mobile qui va envoyer la séquence de couleurs que les joueurs devront reproduire. Chaque joueur va ensuite recevoir la séquence sur sa manette, le joueur la reproduisant le plus rapidement sans erreur est le vainqueur de la manche. À chaque nouvelle manche la taille de la séquence augmente, ajoutant continuellement de la difficulté.
+
 
 # Serveur Node JS
 Le serveur Node est stocké dans le dossier Xbee. 
