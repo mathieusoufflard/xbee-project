@@ -15,3 +15,12 @@ Le dossier est composé de 2 fichiers principaux :
 - Index.js : contient l'ensemble du code pour la partie de Simon
 
 # App Mobile 
+
+l'application est stocké dans le dossier Mobil.
+
+Le dossier est composé de 2 fichiers principaux : 
+
+- activity_main.xml : contient le front de l'application
+- MainActivity.kt : contient le back de l'application
+
+pour installer l'app sur votre mobil il est possible de build l'application via Android studio. branchez votre telephone android, activer le mode debuger puis lancer le build sur votre device.
